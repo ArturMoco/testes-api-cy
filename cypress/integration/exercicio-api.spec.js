@@ -23,13 +23,13 @@ describe('Testes da Funcionalidade Usuários', () => {
           })
      });
 
-     it.only('Deve cadastrar um usuário com sucesso', () => {
+     it('Deve cadastrar um usuário com sucesso', () => {
           cy.request({
                method: 'POST',
                url: 'usuarios',
                body: {
-                    "nome": "carlos Andre",
-                    "email": "andre_qa@gmail.com",
+                    "nome": "Paulo Andre",
+                    "email": "paulo_qa@gmail.com",
                     "password": "teste",
                     "administrador": "true"
                }
@@ -76,7 +76,7 @@ describe('Testes da Funcionalidade Usuários', () => {
      it('Deve deletar um usuário previamente cadastrado', () => {
           cy.request({
                method: 'DELETE',
-               url: `usuarios/VEEYJTQOZXVFhhhd`
+               url: `usuarios/I5SbsnnF8fRoSTLG`
           }).then(response => {
                expect(response.status).to.equal(200)
                expect(response.body.message).to.equal('Registro excluído com sucesso')
